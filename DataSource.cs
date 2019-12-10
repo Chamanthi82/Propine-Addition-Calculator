@@ -19,7 +19,7 @@ namespace ConsoleApplication1
             {
                 case DataType.Excel:
                     Excel.Application xlApp = new Excel.Application();
-                    Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(@"C:\Users\chamanthi\Desktop\ConsoleApplication1\data.xlsx");
+                    Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(System.Configuration.ConfigurationSettings.AppSettings["FilePath"]);
                     Excel._Worksheet xlWorksheet = (Excel.Worksheet)xlWorkbook.Worksheets.get_Item(1);
                     Excel.Range xlRange = xlWorksheet.Rows[1]; //For all columns in row 1
 
